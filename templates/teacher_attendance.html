@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ATTENDANCE</title>
+  <link rel="stylesheet" href="{% static 'teacher_attendance.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+    <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+    <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'home_url' %}">DATUM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+        </li>
+      </ul>
+      <a class="nav-link" href="{% url 'course_url' %}">COURSES</a>
+      <a class="nav-link" href="{% url 'profile_url' %}">PROFILE </a>
+      <a class="nav-link" href="{% url 'logout_url' %}">LOGOUT </a>
+    </div>
+  </nav>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  <div class='user-profile' style="margin-top:2%; margin-bottom:2%;">
+    <h1 class="gradient-text">ATTENDANCE</h1>
+  </div>
+
+  <div class='container' style="margin:0%;">
+    <div class="row" style="margin:0%;">
+      <div class="col" id='box'>
+        <div style="width:100%;max-height:350px;">
+          <table class="table text-center table-hover">
+            <thead>
+              <tr>
+                <th style="width:4%;position:sticky;top:0;border: 1px solid black;">
+                  <h4 id='heading_text'>DATE</h4>
+                </th>
+                <th style="width:3%;position:sticky;top:0;border: 1px solid black;">
+                  <h4 id='heading_text'>ACTION<h4>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for date in dates %}
+              <tr>
+                <td>
+                  <h5 id='normal_text'>{{ date }}</h5>
+                </td>
+                <td style="text-align:center;">
+                  <form method="POST">
+                    <button name="user_demand" style='text-decoration: none;' id='links' type="submit" value="{{ date }}">VIEW</button>
+                    {% csrf_token %}
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col" style="margin:0%;">
+        <div class="row" style="margin:0%;">
+          <div id='info_1'>
+            <span id="abc_1">DAYS MARKED</span>
+            <h1 id='percentage_color_1'>{{ count }}</h1>
+          </div>
+        </div>
+        <div class="row">
+          <a style="text-decoration: none;" href="{% url 'mark_attendance_url' %}"><button id='bt' name="submit" type="button">
+              <h5>MARK NEW ATTENDANCE</h5>
+            </button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

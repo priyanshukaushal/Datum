@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ATTENDANCE</title>
+  <link rel="stylesheet" href="{% static 'view_attendance.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+    <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+    <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'home_url' %}">DATUM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+        </li>
+      </ul>
+      <a class="nav-link" href="{% url 'course_url' %}">COURSES</a>
+      <a class="nav-link" href="{% url 'profile_url' %}">PROFILE </a>
+      <a class="nav-link" href="{% url 'logout_url' %}">LOGOUT </a>
+    </div>
+  </nav>
+  <div class='user-profile' style="margin-top:2%; margin-bottom:2%;">
+    <h1 class="gradient-text">ATTENDANCE &nbspON&nbsp {{ date }}</h1>
+  </div>
+
+
+  <div class='container' style='margin: 0%; '>
+    <div class='row' style='margin: 0%;'>
+      <div class="col" id='box'>
+        <div style="width:100%;max-height:350px;">
+          <table class="table table-center table-hover">
+            <thead>
+              <tr>
+                <th style="width:4%;position:sticky;top:0;border: 1px solid black;">
+                  <h4 id='heading_text'>SID</h4>
+                </th>
+                <th style="width:3%;position:sticky;top:0;border: 1px solid black;">
+                  <h4 id='heading_text'>STATUS<h4>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for student,status in attendance %}
+              <tr>
+                <td>
+                  <h5 id='normal_text'>{{ student }}</h5>
+                </td>
+                <td>
+                  <h5 id='normal_text'>{{ status }}</h5>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col" style="margin:0%;">
+        <div id='info_1'>
+          <div class="row" style="justify-content:center;">
+            <div class="col-lg-5">
+              <span id="abc_2">PRESENT</span>
+              <h1 id='percentage_color_4'>{{ present }}</h1>
+            </div>
+            <div style="border-left:3px solid grey;height:200px;margin-left: 7%;margin-right: 5%"></div>
+            <div class="col-lg-5">
+              <span id="abc_2">ABSENT</span>
+              <h1 id='percentage_color_4'>{{ absent }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

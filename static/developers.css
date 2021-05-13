@@ -1,0 +1,170 @@
+
+#DATUM_HEADING{
+    color: black;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 2.5em;
+    padding-left: 10px;
+    margin-right: 0.5rem;
+    font-family: sans-serif;
+}
+
+.nav-link{
+  text-align: left;
+  padding: 3px 10px;
+  margin: 1px 2px;
+  font-size:1.1em;
+  font-weight: 500;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  border-radius: 0.7em;
+  transition: .5s;
+}
+
+.nav-link:hover{
+  color: black;
+  background-color: #e069a0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-profile{
+    padding-top: 1%;
+    padding-bottom: 2.5%;
+    border-radius: 1em;
+    margin: 7px;
+    justify-content: center;
+    display: flex;
+}
+.gradient-text {
+  font-family: Druk,Impact,sans-serif;
+  color: black;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 6em;
+  text-align: center;
+  margin-bottom: -5;
+  margin-top: 10;
+}
+
+.our-team {
+padding: 30px 0 40px;
+margin-bottom: 30px;
+background-color: WHITE;
+text-align: center;
+overflow: hidden;
+position: relative;
+border-radius: 1.5em;
+}
+
+.our-team .picture {
+display: inline-block;
+height: 150px;
+width: 150px;
+margin-bottom: 50px;
+z-index: 1;
+position: relative;
+}
+
+.our-team .picture::before {
+content: "";
+width: 100%;
+height: 0;
+border-radius: 50%;
+background-color: hotpink;
+position: absolute;
+bottom: 135%;
+right: 0;
+left: 0;
+opacity: 0.9;
+transform: scale(3);
+transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+height: 100%;
+}
+
+.our-team .picture::after {
+content: "";
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: hotpink;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+
+}
+
+.our-team .picture img {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+transform: scale(1);
+transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+box-shadow: 0 0 0 14px white;
+transform: scale(0.7);
+}
+
+.our-team .title {
+display: block;
+font-weight: 500;
+font-size: 1em;
+color: black;
+font-family: inherit;
+font-style: normal;
+margin-bottom: 10%;
+}
+
+.our-team .name {
+display: block;
+font-size: 1.3em;
+color: black;
+font-family:sans-serif;
+font-weight: bold;
+font-style: normal;
+margin-top: 3%;
+margin-bottom: 7%;
+}
+
+.our-team .social {
+width: 100%;
+padding: 0;
+margin: 0;
+background-color: hotpink;
+position: absolute;
+bottom: -100px;
+left: 0;
+transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social {
+bottom: 0;
+/*border-bottom-left-radius: 1.5em;
+border-bottom-right-radius: 1.5em;
+border:2px solid black;*/
+
+}
+
+.our-team .social li {
+display: inline-block;
+}
+
+.our-team .social li a {
+display: block;
+padding: 10px;
+font-size: 17px;
+color:black;
+transition: all 0.3s ease 0s;
+text-decoration: none;
+}
+
+.our-team .social li a:hover {
+color: hotpink;
+background-color: black;
+}

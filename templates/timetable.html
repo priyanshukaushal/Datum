@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>TIMETABLE</title>
+  <link rel="stylesheet" href="{% static 'timetable.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+    <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+    <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'home_url' %}">DATUM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+        </li>
+      </ul>
+      <a class="nav-link" href="{% url 'profile_url' %}">PROFILE </a>
+      <a class="nav-link" href="{% url 'logout_url' %}">LOGOUT </a>
+    </div>
+  </nav>
+  <div class='user-profile' style="margin-top:2%; margin-bottom:2%;">
+    <h1 class="gradient-text">TIMETABLE</h1>
+  </div>
+
+  <div class="container">
+    <div class="row" >
+      <div class="col" id='box'>
+        <table class="table text-center table-hover">
+          <thead>
+            <tr>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>TIME</h4>
+              </th>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>MONDAY </h4>
+              </th>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>TUESDAY </h4>
+              </th>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>WEDNESDAY</h4>
+              </th>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>THURSDAY </h4>
+              </th>
+              <th style="border: 1px solid black;">
+                <h4 id='heading_text'>FRIDAY </h4>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h5 id='normal_text'>9:00&nbsp-&nbsp10:00</h5>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ monday.0 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ tuesday.0 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ wednesday.0 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ thursday.0 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ friday.0 }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5 id='normal_text'>10:00&nbsp-&nbsp11:00</h5>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ monday.1 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ tuesday.1 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ wednesday.1 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ thursday.1 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ friday.1 }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5 id='normal_text'>11:00&nbsp-&nbsp12:00</h5>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ monday.2 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ tuesday.2 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ wednesday.2 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ thursday.2 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ friday.2 }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5 id='normal_text'>12:00&nbsp-&nbsp1:00</h5>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ monday.3 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ tuesday.3 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ wednesday.3 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ thursday.3 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ friday.3 }}</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h5 id='normal_text'>3:00&nbsp-&nbsp5:00</h5>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ monday.4 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ tuesday.4 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ wednesday.4 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ thursday.4 }}</span>
+              </td>
+              <td>
+                <span class="subject" id='normal_text'>{{ friday.4 }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

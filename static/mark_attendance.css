@@ -1,0 +1,144 @@
+#DATUM_HEADING{
+    color: black;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 2.5em;
+    padding-left: 10px;
+    margin-right: 0.5rem;
+    font-family: sans-serif;
+}
+
+.nav-link{
+  text-align: left;
+  padding: 3px 10px;
+  margin: 1px 2px;
+  font-size:1.1em;
+  font-weight: 500;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  border-radius: 0.7em;
+  transition: .5s;
+}
+
+.nav-link:hover{
+  color: black;
+  background-color: #e069a0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-profile{
+    padding-top: 1%;
+    padding-bottom: 2.5%;
+    border-radius: 1em;
+    margin: 7px;
+    justify-content: center;
+    display: flex;
+}
+.gradient-text {
+  font-family: Druk,Impact,sans-serif;
+  color: black;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 6em;
+  text-align: center;
+  margin-bottom: -5;
+  margin-top: 10;
+}
+
+#edit_form{
+  margin: 0% 35% 5% 35%;
+  padding: 1% 0 0 0%;
+  border-radius: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#FormInput{
+  margin-right: 8%;
+  border-radius: 3em;
+  border: 1px solid #0080fe;
+}
+
+.Submit_button{
+    font-family: inherit;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: left;
+    padding: 5px 11px;
+    margin: 1px 5px;
+    border-radius: 0.7em;
+    transition: .5s;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+}
+
+.Submit_button:hover{
+  background-color: #e069a0;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: black;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 81px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(240, 48, 48);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(56, 235, 32);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px  rgb(56, 235, 32);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

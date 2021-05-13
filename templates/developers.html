@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>DEVELOPERS</title>
+  <link rel="stylesheet" href="{% static 'developers.css' %}">
+  <script src="https://kit.fontawesome.com/2fefbcf971.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!----navbar----->
+  <div class="navb">
+    <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+      <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+        <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'login_url' %}">DATUM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+            </li>
+          </ul>
+          <a class="nav-link" href="{% url 'about_url' %}">ABOUT </a>
+          <a class="nav-link" href="{% url 'developers_url' %}">DEVELOPERS </a>
+        </div>
+    </nav>
+  </div>
+  <div class='user-profile' style="margin-top:2%;">
+      <h1 class="gradient-text">DEVELOPERS</h1>
+  </div>
+  <div class="container">
+    <div class="row" style="margin-top:3%;">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'sudhir.jpg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">SUDHIR SANDUJA</h3>
+            <h4 class="title">WEB DEVELOPER</h4>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/sudhir-sanduja-1261b3198" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a href="https://github.com/Sudhir0003" class="fa fa-github" aria-hidden="true"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'priyanshu.jpg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">PRIYANSHU KAUSHAL</h3>
+            <h4 class="title">WEB DEVELOPER</h4>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/priyanshu-kaushal-08508a1aa/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a href="https://github.com/priyanshukaushal" class="fa fa-github" aria-hidden="true"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'navdeep.jpeg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">NAVDEEP KUMAR</h3>
+            <h4 class="title">WEB DEVELOPER</h4>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/navdeep-kumar-4bb934182" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a href="https://github.com/navk007" class="fa fa-github" aria-hidden="true"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'ritik.jpg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">RITIK PUNIA</h3>
+            <h4 class="title">WEB DEVELOPER</h4>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/ritik-punia-4350391b2" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a href="https://github.com/Ritikpunia" class="fa fa-github" aria-hidden="true"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HOME</title>
+  <link rel="stylesheet" href="{% static 'student.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="navb">
+    <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+      <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+        <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'home_url' %}">DATUM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"></li>
+          </ul>
+          <a class="nav-link" href="{% url 'profile_url' %}">PROFILE </a>
+          <a class="nav-link" href="{% url 'logout_url' %}">LOGOUT </a>
+        </div>
+    </nav>
+  </div>
+
+  <div class='user-profile' style="margin-top:2%;">
+      <h1 class="gradient-text">{% if name == none %}
+      <span style="font-family: sans-serif;font-size:0.7em;">Your Profile is incomplete, Please fill your personal details.</span>
+      {% else %}
+      <span style="font-family: sans-serif;font-size:0.7em;">Hello</span>&nbsp&nbsp {{ name }}
+      {% endif %}</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div >
+          <div class="card-body">
+            <img class="courses" style="margin-left:20%;" src="https://image.freepik.com/free-vector/education-online-training-courses-tutorials-online-books_1200-516.jpg" alt="courses">
+            <a style="text-decoration: none;" href="{% url 'course_url' %}"><button id="bt" class="btn btn-lg btn-block btn-outline-light" type="button" style="margin-left:35%;">COURSES</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div >
+          <div class="card-body" >
+            <img class="timetable" style="margin-left:17%;" src="https://thumbs.dreamstime.com/b/timetable-icon-vector-sign-symbol-isolated-white-backgrou-background-your-web-mobile-app-design-logo-concept-133737829.jpg" alt="timetable" >
+            <a style="text-decoration: none;" href="{% url 'timetable_url' %}"><button id="bt" class="btn btn-lg btn-block btn-outline-light" type="button" style="margin-left:33%;">TIMETABLE</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

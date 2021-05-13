@@ -1,0 +1,130 @@
+#DATUM_HEADING{
+    color: black;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 2.5em;
+    padding-left: 10px;
+    margin-right: 0.5rem;
+    font-family: sans-serif;
+}
+
+.nav-link{
+  text-align: left;
+  padding: 3px 10px;
+  margin: 1px 2px;
+  font-size:1.1em;
+  font-weight: 500;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  border-radius: 0.7em;
+  transition: .5s;
+}
+
+.nav-link:hover{
+  color: black;
+  background-color: #e069a0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-profile{
+    padding-top: 1%;
+    padding-bottom: 2.5%;
+    border-radius: 1em;
+    margin: 7px;
+    justify-content: center;
+    display: flex;
+}
+.gradient-text {
+  font-family: Druk,Impact,sans-serif;
+  color: black;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 6em;
+  text-align: center;
+  margin-bottom: -5;
+  margin-top: 10;
+}
+
+#heading_text{
+    padding:3% 5% 3% 5%;
+    font-size:1.5em;
+    font-weight: 900;
+    color: black;
+    font-family: sans-serif;
+    font-style: normal;
+    text-align: center;
+}
+
+#normal_text{
+  font-size:1.3em;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  text-align: center;
+  padding:3% 3% 2% 3%;
+}
+
+#box{
+    margin: 2% 10% 0% 20%;
+    padding: 0%;
+    overflow: scroll;
+    display: flex;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2), 0px 0px 20px 0px rgba(0, 0, 0, 0.19);
+  }
+
+  #info_1{
+      padding: 7% 10% 7% 10%;
+      border-radius: 3em;
+      margin: 14% 0% 0% 12%;
+      box-shadow: 0px 20px 40px 10px pink;
+      width:100%;
+  }
+
+
+  #abc_2{
+    font-size:1.5em;
+    font-weight: 700;
+    color: black;
+    font-family: inherit;
+    font-style: normal;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    justify-content: center;
+    display: flex;
+  }
+
+
+#percentage_color_4{
+    color: rgb(247, 83, 43);
+    display: block;
+    text-align: center;
+    font-size: 8em;
+    justify-content: center;
+    display: flex;
+    margin-top:5%;
+    margin-right: 3%;
+
+}
+
+
+th{
+  background-color: white;
+  border: 1px solid black;
+}
+td{
+  background-color: rgba(242,189,209,0.6);
+  border: 1px solid black;
+}
+.table-hover td:hover{
+  background-color: white;
+}
+.table th{
+  border: 1px solid black;
+}
+.table thead th{
+  border: 1px solid black;
+}
+.table td{
+  vertical-align: middle;
+}

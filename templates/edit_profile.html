@@ -1,0 +1,179 @@
+{% load static %}
+<html>
+<head>
+  <title>EDIT-PROFILE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="{% static 'edit_profile.css' %}">
+</head>
+
+<body>
+  <nav style='border-bottom: 1px solid rgb(221, 221, 221);' class="navbar navbar-expand-lg navbar-light">
+    <img src="{% static 'logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="Logo">
+    <a class="navbar-brand" id='DATUM_HEADING' href="{% url 'home_url' %}">DATUM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+        </li>
+      </ul>
+      <a class="nav-link" href="{% url 'profile_url' %}">PROFILE </a>
+      <a class="nav-link" href="{% url 'logout_url' %}">LOGOUT </a>
+    </div>
+  </nav>
+  <div class='user-profile'>
+    <h1 class="gradient-text">EDIT PROFILE</h1>
+  </div>
+  <div class='container' style='margin-top: 2%; '>
+    <div class="row">
+      <div class="col-7" id='edit_form'>
+        <form method="POST" id='form' style='padding-top: 3%;'>
+          <div class="form-group" style='margin-bottom: 5px;'>
+              <label style='display: flex;'>
+    <h5 ><span id="abc">NAME</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;" type="text" class="form-control" name='name' aria-describedby="emailHelp" placeholder="Name">
+  </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 5px;'>
+              <label style='display: flex;'>
+    <h5><span id="abc">EMAIL</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;" type="email" class="form-control" name='email' placeholder="Email">
+  </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 5px;'>
+              <label style='display: flex;'>
+    <h5 style='margin-right: 1%;'><span id="abc">ADDRESS</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;" type="text" class="form-control" name='address' placeholder="Address">
+  </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 5px;'>
+              <label style='display: flex;'>
+    <h5 style='margin-right: 1%;'><span id="abc">CONTACT</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;" type="text" class="form-control" name='contact' placeholder="Contact">
+  </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 5px;'>
+              <label style='display: flex;'>
+    <h5 style='margin-right: -4%;'><span id="abc">SEX</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style='margin: 2% 1.2% 1.7% 4%;' type="radio" name="sex" value="M">
+    <span style='margin-top: 4px;'>Male</span>
+    <input style='margin: 2% 1.2% 1.7% 4%;' type="radio" name="sex" value="F">
+    <span style='margin-top: 4px;'>Female</span>
+  </label>
+          </div>
+          <div class="form-group" style='margin-bottom:3%;'>
+              <label style='display: flex;'>
+    <h5 style='margin-right: -1%;'><span id="abc">AGE</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+    <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;" type="number" class="form-control" name='age' placeholder="Age">
+  </label>
+          </div>
+          <div style='display: flex; justify-content: center;'>
+              <h5 id='alert'></h5>
+          </div>
+          <div style='padding-top: 10px; text-align: center;'>
+              <button style='border-radius: .7em;' type="submit" class="Submit_button">SUBMIT</button>
+          </div>
+          {% csrf_token %}
+      </form>
+      </div>
+      <div class="col-4" id='edit_form_1'>
+        <form method="POST" id='form_1' style='padding-top: 3%;'>
+          <div style='margin-bottom: 9%;'>
+            <h5><span id="abc" style=" text-decoration-line:none;border-bottom:2px solid grey;">CHANGE&nbsp PASSWORD</span></h5>
+          </div>
+          <div class="form-group" style='margin-bottom: 5%;'>
+            <h5><span id="abc_1">Old Password*</span></h5>
+            <label style='display: flex;'>
+              <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;width:92%;" type="password" required class="form-control" name='old_password' placeholder="Enter Password">
+              <i class="far fa-eye-slash" id="toggle_old_password" style='margin: 3% 0% 0% -17%;'></i>
+            </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 5%;'>
+            <h5><span id="abc_1">New Password*</span></h5>
+            <label style='display: flex;'>
+              <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;width:92%;" type="password" class="form-control" required name='new_password' placeholder="Must contain 8+ characters">
+              <i class="far fa-eye-slash" id="toggle_new_password" style='margin: 3% 0% 0% -17%;'></i>
+            </label>
+          </div>
+          <div class="form-group" style='margin-bottom: 3%;'>
+            <h5><span id="abc_1">Confirm Password*</span></h5>
+            <label style='display: flex;'>
+              <input style="border-color: black; margin-right: 8%;  border-radius: 3em;border: 1px solid black;width:92%;" type="password" class="form-control" required name='new_password_1' placeholder="Confirm Password">
+              <i class="far fa-eye-slash" id="toggle_new_password_1" style='margin: 3% 0% 0% -17%;'></i>
+            </label>
+          </div>
+          <div style='display: flex; justify-content: center;'>
+            <h5 class='Alert'>{{ error }}</h5>
+          </div>
+          <div style='padding-top: 10px;margin-left:31%;'>
+            <button style='border-radius: .7em;' type="submit" class="Submit_button">UPDATE</button>
+          </div>
+          {% csrf_token %}
+        </form>
+      </div>
+    </div>
+  </div>
+  <script defer src="{% static 'edit_profile.js' %}"></script>
+
+  <script>
+    let old_password = document.querySelector('#form_1').elements.old_password;
+    let toggle_old_password = document.querySelector('#toggle_old_password');
+
+    toggle_old_password.addEventListener('click', () => {
+      if (old_password.type === 'password') {
+        old_password.type = 'text'
+        toggle_old_password.classList.remove('fa-eye-slash');
+        toggle_old_password.classList.add('fa-eye')
+      } else {
+        toggle_old_password.classList.add('fa-eye-slash');
+        toggle_old_password.classList.remove('fa-eye')
+        old_password.type = 'password'
+      }
+      console.log(old_password.type);
+    })
+
+    let new_password = document.querySelector('#form_1').elements.new_password;
+    let toggle_new_password = document.querySelector('#toggle_new_password');
+
+    toggle_new_password.addEventListener('click', () => {
+      if (new_password.type === 'password') {
+        new_password.type = 'text'
+        toggle_new_password.classList.remove('fa-eye-slash');
+        toggle_new_password.classList.add('fa-eye')
+      } else {
+        toggle_new_password.classList.add('fa-eye-slash');
+        toggle_new_password.classList.remove('fa-eye')
+        new_password.type = 'password'
+      }
+      console.log(new_password.type);
+    })
+
+    let new_password_1 = document.querySelector('#form_1').elements.new_password_1;
+    let toggle_new_password_1 = document.querySelector('#toggle_new_password_1');
+
+    toggle_new_password_1.addEventListener('click', () => {
+      if (new_password_1.type === 'password') {
+        new_password_1.type = 'text'
+        toggle_new_password_1.classList.remove('fa-eye-slash');
+        toggle_new_password_1.classList.add('fa-eye')
+      } else {
+        toggle_new_password_1.classList.add('fa-eye-slash');
+        toggle_new_password_1.classList.remove('fa-eye')
+        new_password_1.type = 'password'
+      }
+      console.log(new_password_1.type);
+    })
+  </script>
+
+  <script src="https://kit.fontawesome.com/f42c6e913b.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+
+</html>

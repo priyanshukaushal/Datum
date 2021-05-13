@@ -1,0 +1,87 @@
+#DATUM_HEADING{
+    color: black;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 2.5em;
+    padding-left: 10px;
+    margin-right: 0.5rem;
+    font-family: sans-serif;
+}
+
+.nav-link{
+  text-align: left;
+  padding: 3px 10px;
+  margin: 1px 2px;
+  font-size:1.1em;
+  font-weight: 500;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  border-radius: 0.7em;
+  transition: .5s;
+}
+
+.nav-link:hover{
+  color: black;
+  background-color: #e069a0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-profile{
+    padding-top: 1%;
+    padding-bottom: 2.5%;
+    border-radius: 1em;
+    margin: 7px;
+    justify-content: center;
+    display: flex;
+}
+.gradient-text {
+  font-family: Druk,Impact,sans-serif;
+  color: black;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: -5;
+  margin-top: 10;
+}
+
+
+.card-body{
+margin:2px;
+
+}
+
+.timetable{
+width:60%;
+border-radius: 50%;
+box-shadow: 0px 20px 40px 10px pink;
+margin-bottom: 10%;
+
+}
+.courses{
+width:60%;
+border-radius: 50%;
+box-shadow: 0px 20px 40px 10px pink;
+margin-bottom: 10%;
+}
+
+#bt{
+background-color: black;
+color: white;
+font-size:1.2em;
+font-weight: 500;
+font-family: inherit;
+font-style: normal;
+width: 30%;
+border-radius: 0.7em;
+padding: 12px 13px 12px 13px;
+border:2px solid black;
+
+}
+#bt:hover{
+background-color: hotpink;
+color:black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
