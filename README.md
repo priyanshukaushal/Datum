@@ -3,13 +3,17 @@ Datum is a student management system made for use by teachers and students, so t
 To run the website, first install python 3.9.1 or above. Create a virtual environment and intall django 3.1.6 in your Virtualenv.
 Now navigate to folder containing the manage.py file.
 
-Run the following commands :
+# Run the following commands :
+
 python manage.py migrate
+
 python manage.py makemigrations app_one
 
-To create a new admin :
+# To create a new admin :
+
 python manage.py createsuperuser
 
-Finally run the Website :
+# Finally run the Website :
+
 python manage.py runserver
 
